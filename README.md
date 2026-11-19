@@ -1,6 +1,6 @@
 # Appetize for AI agents
 
-Agent skills and plugins for [Appetize](https://appetize.io), which runs iOS
+Agent skills for [Appetize](https://appetize.io), which runs iOS
 and Android apps on cloud simulators and emulators.
 
 ## The `appetize` skill

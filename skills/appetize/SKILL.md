@@ -48,4 +48,6 @@ then load the guide:
 npm install -g @appetize/cli@latest
 ```
 
+If it is still unknown after upgrading, stop and tell the user.
+
 Human-readable docs: https://docs.appetize.io/ai-agents
