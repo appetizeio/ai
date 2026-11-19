@@ -3,7 +3,7 @@
 Agent skills for [Appetize](https://appetize.io), which runs iOS
 and Android apps on cloud simulators and emulators.
 
-## The `appetize` skill
+## The `appetize-cli` skill
 
 Teaches a coding agent to run, inspect and control a mobile app with the
 [`appetize` CLI](https://docs.appetize.io/ai-agents). The skill is a thin

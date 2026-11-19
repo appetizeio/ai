@@ -1,5 +1,5 @@
 ---
-name: appetize
+name: appetize-cli
 description: >-
   Run, inspect and control iOS/Android apps on Appetize cloud devices via the
   appetize CLI. Use when running, testing or debugging a mobile app build
