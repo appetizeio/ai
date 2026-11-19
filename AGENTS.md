@@ -9,3 +9,7 @@ Agents only pick up a change when the version changes. A PR that forgets the bum
 Plugin manifests:
 
 - `.claude-plugin/plugin.json`
+
+## Brand assets
+
+`assets/` holds unmodified exports from the "Logos & design assets" shared drive, under Brand > Logo. Do not edit or redraw them; pull a new export instead.
