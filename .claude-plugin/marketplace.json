@@ -1,0 +1,15 @@
+{
+  "name": "appetize",
+  "description": "Appetize plugins for coding agents",
+  "owner": {
+    "name": "Appetize",
+    "url": "https://appetize.io"
+  },
+  "plugins": [
+    {
+      "name": "appetize",
+      "source": "./",
+      "description": "Run, inspect and control iOS and Android apps on Appetize cloud devices"
+    }
+  ]
+}

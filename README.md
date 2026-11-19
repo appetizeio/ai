@@ -27,6 +27,18 @@ gh skill install appetizeio/ai
 Both install the skill for the coding agents you choose, such as Claude Code,
 Codex, Cursor and GitHub Copilot.
 
+### Claude Code plugin
+
+In Claude Code, add this repo as a marketplace, then install the `appetize`
+plugin from it:
+
+```text
+/plugin marketplace add appetizeio/ai
+/plugin install appetize@appetize
+```
+
+The plugin carries the same `appetize-cli` skill, so install one or the other.
+
 ## License
 
 [MIT](LICENSE)
