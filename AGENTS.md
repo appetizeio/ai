@@ -10,6 +10,7 @@ Plugin manifests:
 
 - `.claude-plugin/plugin.json`
 - `.codex-plugin/plugin.json`
+- `.cursor-plugin/plugin.json`
 
 ## Brand assets
 

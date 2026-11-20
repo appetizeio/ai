@@ -27,6 +27,20 @@ codex plugin marketplace add appetizeio/ai
 Then run `codex`, open `/plugins` and install `appetize`. Start a new session
 to use it.
 
+### Cursor
+
+Until the plugin is in the Cursor Marketplace, install it from a clone:
+
+```bash
+git clone https://github.com/appetizeio/ai ~/.cursor/plugins/local/appetize
+```
+
+Restart Cursor, or run **Developer: Reload Window**, then open **Customize**
+to confirm the plugin loaded.
+
+On a Teams or Enterprise plan, an admin can instead add this repo under
+**Dashboard > Plugins & MCPs > Team Marketplaces > Import from Repo**.
+
 ## Install a skill
 
 For an agent without plugin support, install skills on their own.

@@ -1,0 +1,13 @@
+{
+  "name": "appetize",
+  "version": "0.3.0",
+  "description": "Run, inspect and control iOS and Android apps on Appetize cloud devices",
+  "author": {
+    "name": "Appetize"
+  },
+  "homepage": "https://docs.appetize.io/ai-agents",
+  "repository": "https://github.com/appetizeio/ai",
+  "license": "MIT",
+  "keywords": ["appetize", "ios", "android", "simulator", "emulator", "mobile"],
+  "logo": "assets/appetizeMark-slate.svg"
+}
