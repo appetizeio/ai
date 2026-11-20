@@ -9,7 +9,7 @@
     "validate:codex": "run-s 'validate:codex:*'",
     "validate:codex:marketplace": "node scripts/validate-json.mjs schemas/codex-marketplace.schema.json .agents/plugins/marketplace.json",
     "validate:codex:plugin": "node scripts/validate-json.mjs schemas/codex-plugin.schema.json .codex-plugin/plugin.json",
-    "validate:cursor": "node scripts/validate-json.mjs https://raw.githubusercontent.com/cursor/plugins/aaeb0ea3a0584995aa8f55ce44c6c5259414b896/schemas/plugin.schema.json .cursor-plugin/plugin.json",
+    "validate:cursor": "node scripts/validate-json.mjs schemas/cursor-plugin.schema.json .cursor-plugin/plugin.json",
     "validate:manifests": "node scripts/validate-manifests.mjs",
     "validate:skills": "node scripts/validate-skills.mjs"
   },
