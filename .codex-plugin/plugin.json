@@ -1,0 +1,25 @@
+{
+  "name": "appetize",
+  "version": "0.2.0",
+  "description": "Run, inspect and control iOS and Android apps on Appetize cloud devices",
+  "author": {
+    "name": "Appetize",
+    "url": "https://appetize.io"
+  },
+  "homepage": "https://docs.appetize.io/ai-agents",
+  "repository": "https://github.com/appetizeio/ai",
+  "license": "MIT",
+  "keywords": ["appetize", "ios", "android", "simulator", "emulator", "mobile"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Appetize",
+    "shortDescription": "Drive mobile apps in the cloud",
+    "longDescription": "Run, inspect and control iOS and Android apps on Appetize cloud simulators and emulators from your coding agent, with the appetize CLI.",
+    "developerName": "Appetize",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "websiteURL": "https://appetize.io",
+    "composerIcon": "./assets/appetizeMark-slate.svg",
+    "logo": "./assets/appetizeMark-slate.png"
+  }
+}
