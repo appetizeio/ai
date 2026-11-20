@@ -1,5 +1,9 @@
 # AGENTS.md
 
+## Validation
+
+Run `pnpm install` once, then `pnpm validate` before you push. It checks the skills and every plugin manifest, and is the same check CI runs. `pnpm run` lists the individual `validate:*` scripts.
+
 ## Versioning
 
 Bump `version` only when users would have to download the plugin again to get the change: a skill changed, or a manifest field an agent or its marketplace reads changed. Do not bump for docs, CI, or adding a manifest for another agent.
