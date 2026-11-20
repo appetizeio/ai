@@ -9,6 +9,7 @@ Agents only pick up a change when the version changes. A PR that forgets the bum
 Plugin manifests:
 
 - `.claude-plugin/plugin.json`
+- `.codex-plugin/plugin.json`
 
 ## Brand assets
 

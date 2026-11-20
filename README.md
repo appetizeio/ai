@@ -16,6 +16,17 @@ Add this repo as a marketplace, then install the plugin from it:
 /plugin install appetize@appetize
 ```
 
+### Codex
+
+Add this repo as a marketplace:
+
+```bash
+codex plugin marketplace add appetizeio/ai
+```
+
+Then run `codex`, open `/plugins` and install `appetize`. Start a new session
+to use it.
+
 ## Install a skill
 
 For an agent without plugin support, install skills on their own.
