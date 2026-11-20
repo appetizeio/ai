@@ -27,6 +27,14 @@ codex plugin marketplace add appetizeio/ai
 Then run `codex`, open `/plugins` and install `appetize`. Start a new session
 to use it.
 
+### Cursor
+
+Install `appetize` from the Cursor Marketplace, or run this in chat:
+
+```text
+/add-plugin appetize
+```
+
 ## Install a skill
 
 For an agent without plugin support, install skills on their own.
