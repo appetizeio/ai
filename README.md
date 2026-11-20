@@ -38,8 +38,9 @@ git clone https://github.com/appetizeio/ai ~/.cursor/plugins/local/appetize
 Restart Cursor, or run **Developer: Reload Window**, then open **Customize**
 to confirm the plugin loaded.
 
-On a Teams or Enterprise plan, an admin can instead add this repo under
-**Dashboard > Plugins & MCPs > Team Marketplaces > Import from Repo**.
+On a Teams or Enterprise plan, an admin can instead go to **Dashboard >
+Plugins & MCPs > Team Marketplaces**, click **Add Marketplace**, then
+**Import from Repo** with this repo's URL.
 
 ## Install a skill
 
