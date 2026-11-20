@@ -17,76 +17,17 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Validate skills
-        run: |
-          for skill in skills/*/; do
-            pipx run --spec skills-ref==0.1.1 agentskills validate "$skill"
-          done
+      - name: Setup pnpm
+        uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
 
-      - name: Validate JSON
-        run: |
-          find . -name '*.json' -not -path './.git/*' -print0 |
-            xargs -0 -n1 jq empty
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v6
+        with:
+          node-version-file: .node-version
+          cache: pnpm
 
-      - name: Validate Claude Code plugin
-        if: hashFiles('.claude-plugin/plugin.json') != ''
-        run: npx --yes @anthropic-ai/claude-code@2.1.329 plugin validate --strict .
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - name: Validate Codex plugin
-        if: hashFiles('.codex-plugin/plugin.json') != ''
-        run: |
-          jq --exit-status '
-            (.name | type == "string") and
-            (.version | type == "string") and
-            (.description | type == "string") and
-            (.author.name | type == "string") and
-            (.interface | type == "object") and
-            (.interface.displayName | type == "string") and
-            (.interface.shortDescription | type == "string" and length <= 30) and
-            (.interface.longDescription | type == "string") and
-            (.interface.developerName | type == "string") and
-            (.interface.category | type == "string") and
-            (.interface.capabilities | type == "array") and
-            (.interface.composerIcon | type == "string") and
-            (.interface.logo | type == "string")
-          ' .codex-plugin/plugin.json
-
-      - name: Validate Codex marketplace
-        if: hashFiles('.agents/plugins/marketplace.json') != ''
-        run: |
-          jq --exit-status '
-            (.name | type == "string") and
-            (.plugins | type == "array" and length > 0) and
-            (.plugins | all(
-              (.name | type == "string") and
-              (.source != null) and
-              (.policy.installation | type == "string") and
-              (.policy.authentication | type == "string") and
-              (.category | type == "string")
-            ))
-          ' .agents/plugins/marketplace.json
-
-      - name: Validate Cursor plugin
-        if: hashFiles('.cursor-plugin/plugin.json') != ''
-        run: |
-          pipx run check-jsonschema==0.39.0 \
-            --schemafile https://raw.githubusercontent.com/cursor/plugins/aaeb0ea3a0584995aa8f55ce44c6c5259414b896/schemas/plugin.schema.json \
-            .cursor-plugin/plugin.json
-
-      - name: Check manifest files exist
-        shell: bash
-        run: |
-          jq --raw-output '
-            [.icon, .logo, .interface.logo, .interface.logoDark,
-             .interface.composerIcon, .interface.composerIconDark]
-            | map(select(. != null)) | .[]
-          ' .*-plugin/plugin.json | sort --unique | while read -r file; do
-            test -f "$file" || { echo "Missing $file"; exit 1; }
-          done
-
-      - name: Check versions match
-        shell: bash
-        run: |
-          versions=$(jq --raw-output '.version' .*-plugin/plugin.json | sort --unique)
-          echo "$versions"
-          test "$(echo "$versions" | wc -l)" -eq 1
+      - name: Validate
+        run: pnpm validate
