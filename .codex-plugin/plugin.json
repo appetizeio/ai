@@ -20,6 +20,8 @@
     "capabilities": [],
     "websiteURL": "https://appetize.io",
     "composerIcon": "./assets/appetizeMark-slate.svg",
-    "logo": "./assets/appetizeMark-slate.png"
+    "composerIconDark": "./assets/appetizeMark-white.svg",
+    "logo": "./assets/appetizeMark-slate.png",
+    "logoDark": "./assets/appetizeMark-white.png"
   }
 }
