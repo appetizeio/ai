@@ -29,18 +29,11 @@ to use it.
 
 ### Cursor
 
-Until the plugin is in the Cursor Marketplace, install it from a clone:
+Install `appetize` from the Cursor Marketplace, or run this in chat:
 
-```bash
-git clone https://github.com/appetizeio/ai ~/.cursor/plugins/local/appetize
+```text
+/add-plugin appetize
 ```
-
-Restart Cursor, or run **Developer: Reload Window**, then open **Customize**
-to confirm the plugin loaded.
-
-On a Teams or Enterprise plan, an admin can instead go to **Dashboard >
-Plugins & MCPs > Team Marketplaces**, click **Add Marketplace**, then
-**Import from Repo** with this repo's URL.
 
 ## Install a skill
 
