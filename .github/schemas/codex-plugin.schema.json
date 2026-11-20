@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Codex plugin manifest",
+  "description": "Fields the Codex plugin docs require in .codex-plugin/plugin.json. Codex publishes no schema of its own.",
+  "type": "object",
+  "required": ["name", "version", "description", "author", "interface"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(-[0-9A-Za-z.-]+)?$"
+    },
+    "description": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "author": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "email": { "type": "string" },
+        "url": { "$ref": "#/definitions/httpsUrl" }
+      }
+    },
+    "homepage": { "$ref": "#/definitions/httpsUrl" },
+    "repository": { "type": "string" },
+    "license": { "type": "string" },
+    "keywords": { "type": "array", "items": { "type": "string" } },
+    "skills": {
+      "oneOf": [
+        { "$ref": "#/definitions/relativePath" },
+        { "type": "array", "items": { "$ref": "#/definitions/relativePath" } }
+      ]
+    },
+    "mcpServers": { "$ref": "#/definitions/relativePath" },
+    "interface": {
+      "type": "object",
+      "required": [
+        "displayName",
+        "shortDescription",
+        "longDescription",
+        "developerName",
+        "category",
+        "capabilities",
+        "composerIcon",
+        "logo"
+      ],
+      "properties": {
+        "displayName": { "type": "string", "minLength": 1 },
+        "shortDescription": { "type": "string", "minLength": 1, "maxLength": 30 },
+        "longDescription": { "type": "string", "minLength": 1, "maxLength": 4000 },
+        "developerName": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "category": { "type": "string", "minLength": 1 },
+        "capabilities": { "type": "array", "items": { "type": "string" } },
+        "websiteURL": { "$ref": "#/definitions/httpsUrl" },
+        "supportURL": { "$ref": "#/definitions/httpsUrl" },
+        "privacyPolicyURL": { "$ref": "#/definitions/httpsUrl" },
+        "termsOfServiceURL": { "$ref": "#/definitions/httpsUrl" },
+        "defaultPrompt": {
+          "type": "array",
+          "maxItems": 3,
+          "items": { "type": "string", "maxLength": 128 }
+        },
+        "brandColor": { "$ref": "#/definitions/hexColor" },
+        "brandColorDark": { "$ref": "#/definitions/hexColor" },
+        "composerIcon": { "$ref": "#/definitions/relativePath" },
+        "composerIconDark": { "$ref": "#/definitions/relativePath" },
+        "logo": { "$ref": "#/definitions/relativePath" },
+        "logoDark": { "$ref": "#/definitions/relativePath" }
+      }
+    }
+  },
+  "definitions": {
+    "httpsUrl": { "type": "string", "pattern": "^https://" },
+    "hexColor": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+    "relativePath": { "type": "string", "pattern": "^\\./" }
+  }
+}

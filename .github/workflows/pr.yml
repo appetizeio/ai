@@ -35,36 +35,16 @@ jobs:
       - name: Validate Codex plugin
         if: hashFiles('.codex-plugin/plugin.json') != ''
         run: |
-          jq --exit-status '
-            (.name | type == "string") and
-            (.version | type == "string") and
-            (.description | type == "string") and
-            (.author.name | type == "string") and
-            (.interface | type == "object") and
-            (.interface.displayName | type == "string") and
-            (.interface.shortDescription | type == "string" and length <= 30) and
-            (.interface.longDescription | type == "string") and
-            (.interface.developerName | type == "string") and
-            (.interface.category | type == "string") and
-            (.interface.capabilities | type == "array") and
-            (.interface.composerIcon | type == "string") and
-            (.interface.logo | type == "string")
-          ' .codex-plugin/plugin.json
+          pipx run check-jsonschema==0.39.0 \
+            --schemafile .github/schemas/codex-plugin.schema.json \
+            .codex-plugin/plugin.json
 
       - name: Validate Codex marketplace
         if: hashFiles('.agents/plugins/marketplace.json') != ''
         run: |
-          jq --exit-status '
-            (.name | type == "string") and
-            (.plugins | type == "array" and length > 0) and
-            (.plugins | all(
-              (.name | type == "string") and
-              (.source != null) and
-              (.policy.installation | type == "string") and
-              (.policy.authentication | type == "string") and
-              (.category | type == "string")
-            ))
-          ' .agents/plugins/marketplace.json
+          pipx run check-jsonschema==0.39.0 \
+            --schemafile .github/schemas/codex-marketplace.schema.json \
+            .agents/plugins/marketplace.json
 
       - name: Validate Cursor plugin
         if: hashFiles('.cursor-plugin/plugin.json') != ''
