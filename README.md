@@ -1,5 +1,10 @@
 # Appetize for AI agents
 
+> [!WARNING]
+> **Alpha.** The plugins and skills here have not been tested in every agent
+> yet, and install steps may change. Please
+> [report anything that does not work](https://github.com/appetizeio/ai/issues).
+
 Agent plugins and skills for [Appetize](https://appetize.io), which runs iOS
 and Android apps on cloud simulators and emulators.
 
