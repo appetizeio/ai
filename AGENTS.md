@@ -23,3 +23,5 @@ Plugin manifests:
 ## Brand assets
 
 `assets/` holds unmodified exports from the "Logos & design assets" shared drive, under Brand > Logo. Do not edit or redraw them; pull a new export instead.
+
+`assets/marketplace/` holds images for directory and marketplace listings, which want a square logo on a background plate. `profile.png` is `Socials/Twitter Profile.png` from the same drive.
