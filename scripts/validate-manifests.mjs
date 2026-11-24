@@ -1,12 +1,14 @@
 // Checks that plugin manifests share a version and their icons exist.
 import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
 
+const PLUGIN = 'plugins/appetize';
 const MANIFESTS = [
   '.claude-plugin/plugin.json',
   '.codex-plugin/plugin.json',
   '.cursor-plugin/plugin.json',
-];
+].map((manifest) => join(PLUGIN, manifest));
 
 const errors = [];
 const versions = new Map();
@@ -24,7 +26,7 @@ for (const file of MANIFESTS.filter((path) => existsSync(path))) {
     manifest.interface?.composerIconDark,
   ];
   for (const icon of icons) {
-    if (icon && !/^https?:/.test(icon) && !existsSync(icon)) {
+    if (icon && !/^https?:/.test(icon) && !existsSync(join(PLUGIN, icon))) {
       errors.push(`${file}: missing ${icon}`);
     }
   }

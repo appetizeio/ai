@@ -1,6 +1,6 @@
 {
   "name": "appetize",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Run, inspect and control iOS and Android apps on Appetize cloud devices",
   "author": {
     "name": "Appetize",
@@ -19,8 +19,8 @@
     "category": "Developer Tools",
     "capabilities": [],
     "websiteURL": "https://appetize.io",
-    "composerIcon": "./assets/appetizeMark-slate.svg",
-    "composerIconDark": "./assets/appetizeMark-white.svg",
+    "composerIcon": "./assets/appetizeMark-slate.png",
+    "composerIconDark": "./assets/appetizeMark-white.png",
     "logo": "./assets/appetizeMark-slate.png",
     "logoDark": "./assets/appetizeMark-white.png"
   }

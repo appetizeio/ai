@@ -6,6 +6,10 @@ Run `pnpm install` once, then `pnpm validate` before you push. It checks the ski
 
 `schemas/cursor-plugin.schema.json` is an unmodified copy from `cursor/plugins` at commit `aaeb0ea`. Replace it with a newer copy to pick up schema changes; do not edit it.
 
+## Layout
+
+The plugin and everything it ships live in `plugins/appetize/`. The Claude plugin directory submits only that folder and refuses repo tooling inside it, so keep scripts, schemas and package files outside it.
+
 ## Versioning
 
 Bump `version` only when users would have to download the plugin again to get the change: a skill changed, or a manifest field an agent or its marketplace reads changed. Do not bump for docs, CI, or adding a manifest for another agent.
@@ -16,12 +20,12 @@ Agents only pick up a change when the version changes, so a change that needs a 
 
 Plugin manifests:
 
-- `.claude-plugin/plugin.json`
-- `.codex-plugin/plugin.json`
-- `.cursor-plugin/plugin.json`
+- `plugins/appetize/.claude-plugin/plugin.json`
+- `plugins/appetize/.codex-plugin/plugin.json`
+- `plugins/appetize/.cursor-plugin/plugin.json`
 
 ## Brand assets
 
-`assets/` holds unmodified exports from the "Logos & design assets" shared drive, under Brand > Logo. Do not edit or redraw them; pull a new export instead.
+`assets/` and `plugins/appetize/assets/` hold unmodified exports from the "Logos & design assets" shared drive, under Brand > Logo. Do not edit or redraw them; pull a new export instead.
 
 `assets/marketplace/` holds images for directory and marketplace listings, which want a square logo on a background plate. `profile.png` is `Socials/Twitter Profile.png` from the same drive.

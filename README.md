@@ -68,6 +68,8 @@ Teaches a coding agent to run, inspect and control a mobile app with the
 pointer: it has the agent install the CLI and load the guide with
 `appetize skill get`, so the guide always matches the installed CLI version.
 
+The plugin lives in [`plugins/appetize`](plugins/appetize).
+
 ## License
 
 [MIT](LICENSE)

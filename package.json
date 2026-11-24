@@ -5,11 +5,13 @@
   "type": "module",
   "scripts": {
     "validate": "run-p --print-label 'validate:*'",
-    "validate:claude": "claude plugin validate --strict .",
+    "validate:claude": "run-s 'validate:claude:*'",
+    "validate:claude:marketplace": "claude plugin validate --strict .",
+    "validate:claude:plugin": "claude plugin validate --strict plugins/appetize",
     "validate:codex": "run-s 'validate:codex:*'",
     "validate:codex:marketplace": "node scripts/validate-json.mjs schemas/codex-marketplace.schema.json .agents/plugins/marketplace.json",
-    "validate:codex:plugin": "node scripts/validate-json.mjs schemas/codex-plugin.schema.json .codex-plugin/plugin.json",
-    "validate:cursor": "node scripts/validate-json.mjs schemas/cursor-plugin.schema.json .cursor-plugin/plugin.json",
+    "validate:codex:plugin": "node scripts/validate-json.mjs schemas/codex-plugin.schema.json plugins/appetize/.codex-plugin/plugin.json",
+    "validate:cursor": "node scripts/validate-json.mjs schemas/cursor-plugin.schema.json plugins/appetize/.cursor-plugin/plugin.json",
     "validate:manifests": "node scripts/validate-manifests.mjs",
     "validate:skills": "node scripts/validate-skills.mjs"
   },
