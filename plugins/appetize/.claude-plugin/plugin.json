@@ -9,6 +9,7 @@
   "homepage": "https://docs.appetize.io/ai-agents",
   "repository": "https://github.com/appetizeio/ai",
   "license": "MIT",
+  "termsOfServiceUrl": "https://appetize.io/legal",
   "icon": "./assets/appetizeMark-slate.png",
   "keywords": ["appetize", "ios", "android", "simulator", "emulator", "mobile"]
 }
