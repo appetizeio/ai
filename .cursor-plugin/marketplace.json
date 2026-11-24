@@ -1,0 +1,13 @@
+{
+  "name": "appetize",
+  "owner": {
+    "name": "Appetize"
+  },
+  "plugins": [
+    {
+      "name": "appetize",
+      "source": "plugins/appetize",
+      "description": "Run, inspect and control iOS and Android apps on Appetize cloud devices"
+    }
+  ]
+}

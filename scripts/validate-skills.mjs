@@ -4,7 +4,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { parse } from 'yaml';
 
-const SKILLS_DIR = 'skills';
+const SKILLS_DIR = 'plugins/appetize/skills';
 const FRONTMATTER = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/;
 
 const schema = JSON.parse(await readFile('schemas/skill.schema.json', 'utf8'));

@@ -8,7 +8,7 @@
       "name": "appetize",
       "source": {
         "source": "local",
-        "path": "./"
+        "path": "./plugins/appetize"
       },
       "policy": {
         "installation": "AVAILABLE",
